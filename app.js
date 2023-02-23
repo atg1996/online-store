@@ -27,18 +27,15 @@ app.get('/', (req, res) => {
     res.send('this route returns 200');
 });
 
-// const start = async () => {
-//     try {
-//         // connectDB
-//         await connectDB(process.env.MONGO_URI);
-//         app.listen(port, () => console.log(`Server is listening port ${port}...`));
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-//
-// start();
+const start = async () => {
+    try {
+        // connectDB
+        await connectDB(process.env.MONGO_URI);
+        app.listen(port, () => console.log(`Server is listening port ${port}...`));
+    } catch (error) {
+        console.log(error);
+    }
+};
 
-app.listen(port, () => {
-    console.log("Server is listening to port : 3000")
-})
+start();
+
