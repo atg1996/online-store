@@ -4,6 +4,11 @@ const addItem = async(req,res) => {
     try {
         const { name, images, description, category, tags, price, availableCount } = req.body;
 
+        const existingCategory = await Item.findOne({ category });
+        if (!existingCategory) {
+            return res.status(400).json({ message: 'Invalid category' });
+        }
+
         const item = new Item({
             name,
             images,
