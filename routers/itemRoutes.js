@@ -6,9 +6,9 @@ const {tokenCheck} = require('../middlewares/auth')
 
 
 router.post('/',sellerChecker, controller.addItem)
-router.put('/:id',sellerChecker, controller.updateItem)
-router.delete('/:id',sellerChecker, controller.deleteItem)
 router.get('/getItems/:category',tokenCheck, controller.getItemsByCategory)
 router.get('/search',tokenCheck, controller.searchItems)
+router.put('/:id',sellerChecker, controller.updateItem)
+router.delete('/:id',sellerChecker, controller.deleteItem)
 
 module.exports = router

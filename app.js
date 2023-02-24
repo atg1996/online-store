@@ -15,6 +15,7 @@ const cors = require('cors')
 const connectDB = require('./db/connect')
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
 

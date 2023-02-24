@@ -14,7 +14,7 @@ const itemSchema = new mongoose.Schema({
         required: true,
     },
     category: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'Category',
         required: true,
     },
@@ -28,6 +28,10 @@ const itemSchema = new mongoose.Schema({
     },
     availableCount: {
         type: Number,
+        required: true,
+    },
+    seller: {
+        type: String,
         required: true,
     },
 });
